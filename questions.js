@@ -78,7 +78,7 @@ const questions = [
             { label: "Només sota petició formal raonada (5 pts)", value: "5" },
             { label: "No és una informació accessible (0 pts)", value: "0" }
         ],
-        recommendation: "Es podria valorar divulgar el llistat principal de proveïdors i la seua inversió a la intranet del centre de manera anual per millorar la transparència."
+        recommendation: "Es podria valorar divulgar el llistat principal d'empreses proveïdores i la seua inversió a la intranet del centre de manera anual per millorar la transparència."
     },
 
     // GRUP B: PROPIETARIS I RECURSOS FINANCERS

@@ -254,15 +254,15 @@ function finishAudit() {
             if (q && q.recommendation) {
                 const item = document.createElement('div');
                 item.className = "flex items-start bg-white p-4 rounded-lg shadow-sm border-l-4 border-cheste-red";
-                item.innerHTML = \`
+                item.innerHTML = `
                     <div class="flex-shrink-0 mr-3 text-cheste-red mt-0.5">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <div>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">\${q.subgroup}</p>
-                        <p class="text-sm text-gray-800 font-medium">\${q.recommendation}</p>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">${q.subgroup}</p>
+                        <p class="text-sm text-gray-800 font-medium">${q.recommendation}</p>
                     </div>
-                \`;
+                `;
                 recContent.appendChild(item);
             }
         }
