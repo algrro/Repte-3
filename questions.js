@@ -369,7 +369,7 @@ const questions = [
         recommendation: "Resultaria especial per exemple teixir xarxes humanitàries preparant aquells antics ordinadors o mobles per anar a entitats col·laborants més humils del voltant."
     },
     {
-        id: 37, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilidad Medioambiental",
+        id: 37, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilitat Mediambiental",
         text: "37. Mobilitat Sostenible: El centre ha gestionat amb les autoritats la millora de la freqüència d'autobusos o trens per a reduir l'ús del cotxe?",
         options: [
             { label: "Sí, hi ha una col·laboració activa i millores aconseguides (10 pts)", value: "10" },
@@ -379,7 +379,7 @@ const questions = [
         recommendation: "Us animem a seguir sumant pressions amigables administratives des del Consistori perquè facin la connexió per tren i bus del col·lectiu jove tan inqüestionable com siga possible."
     },
     {
-        id: 38, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilidad Medioambiental",
+        id: 38, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilitat Mediambiental",
         text: "38. Biodiversitat i Entorn: Es mantenen les zones exteriors del centre amb criteris de jardineria sostenible (plantes autòctones, estalvi d'aigua)?",
         options: [
             { label: "Sí, és un espai de biodiversitat gestionat de manera ecològica (10 pts)", value: "10" },

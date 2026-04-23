@@ -369,7 +369,7 @@ const questions = [
         recommendation: "Resultaria especial per exemple teixir xarxes humanitàries preparant aquells antics ordinadors o mobles per anar a entitats col·laborants més humils del voltant."
     },
     {
-        id: 37, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilidad Medioambiental",
+        id: 37, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilitat Mediambiental",
         text: "37. Mobilitat Sostenible: El centre ha gestionat amb les autoritats la millora de la freqüència d'autobusos o trens per a reduir l'ús del cotxe?",
         options: [
             { label: "Sí, hi ha una col·laboració activa i millores aconseguides (10 pts)", value: "10" },
@@ -379,7 +379,7 @@ const questions = [
         recommendation: "Us animem a seguir sumant pressions amigables administratives des del Consistori perquè facin la connexió per tren i bus del col·lectiu jove tan inqüestionable com siga possible."
     },
     {
-        id: 38, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilidad Medioambiental",
+        id: 38, group: "GRUP E: ENTORN SOCIAL (Cheste i Famílies)", subgroup: "E3. Sostenibilitat Mediambiental",
         text: "38. Biodiversitat i Entorn: Es mantenen les zones exteriors del centre amb criteris de jardineria sostenible (plantes autòctones, estalvi d'aigua)?",
         options: [
             { label: "Sí, és un espai de biodiversitat gestionat de manera ecològica (10 pts)", value: "10" },
@@ -657,27 +657,73 @@ function finishAudit() {
     const recContent = resultDiv.querySelector('#recommendationsContent');
     let hasRecs = false;
 
-    // Utilitzar keys per ordenar pel ID (1 a 40)
+    // Utilitzar keys per ordenar pel ID
+    const recsByGroup = {
+        'A': { title: 'Grup A: Empreses Proveïdores', items: [] },
+        'B': { title: 'Grup B: Recursos Financers', items: [] },
+        'C': { title: 'Grup C: Equip Humà', items: [] },
+        'D': { title: 'Grup D: Alumnat', items: [] },
+        'E': { title: 'Grup E: Entorn Social', items: [] }
+    };
+
     for (let currentId in answers) {
         const val = parseInt(answers[currentId]);
         if (val < 10) {
-            hasRecs = true;
             const q = questions.find(q => q.id == currentId);
             if (q && q.recommendation) {
-                const item = document.createElement('div');
-                item.className = "flex items-start bg-white p-4 rounded-lg shadow-sm border-l-4 border-cheste-red";
-                item.innerHTML = `
-                    <div class="flex-shrink-0 mr-3 text-cheste-red mt-0.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">${q.subgroup}</p>
-                        <p class="text-sm text-gray-800 font-medium">${q.recommendation}</p>
-                    </div>
-                `;
-                recContent.appendChild(item);
+                hasRecs = true;
+                let groupKey = 'A';
+                if (q.group.includes('GRUP B')) groupKey = 'B';
+                else if (q.group.includes('GRUP C')) groupKey = 'C';
+                else if (q.group.includes('GRUP D')) groupKey = 'D';
+                else if (q.group.includes('GRUP E')) groupKey = 'E';
+                
+                recsByGroup[groupKey].items.push(q);
             }
         }
+    }
+
+    if (hasRecs) {
+        recContainer.classList.remove('hidden');
+        
+        ['A', 'B', 'C', 'D', 'E'].forEach(key => {
+            const groupData = recsByGroup[key];
+            if (groupData.items.length > 0) {
+                const detailsEl = document.createElement('details');
+                detailsEl.className = "group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden";
+                
+                const summaryEl = document.createElement('summary');
+                summaryEl.className = "flex justify-between items-center font-bold text-lg p-4 bg-gray-50 list-none hover:bg-gray-100 transition-colors cursor-pointer select-none";
+                summaryEl.innerHTML = `
+                    <span class="text-cheste-red">${groupData.title} <span class="text-sm font-normal text-gray-500 ml-2">(${groupData.items.length} recomanacions)</span></span>
+                    <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                `;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = "p-4 space-y-3 border-t border-gray-100 bg-white";
+                
+                groupData.items.forEach(q => {
+                    const item = document.createElement('div');
+                    item.className = "flex items-start p-3 rounded-lg bg-gray-50 border-l-4 border-cheste-red";
+                    item.innerHTML = `
+                        <div class="flex-shrink-0 mr-3 text-cheste-red mt-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">${q.subgroup}</p>
+                            <p class="text-sm text-gray-800">${q.recommendation}</p>
+                        </div>
+                    `;
+                    contentDiv.appendChild(item);
+                });
+                
+                detailsEl.appendChild(summaryEl);
+                detailsEl.appendChild(contentDiv);
+                recContent.appendChild(detailsEl);
+            }
+        });
     }
 
     if (hasRecs) {
