@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Auditoria CIPFP Cheste</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'cheste-red': '#cc0000',
+                        'cheste-red-light': '#ff4d4d',
+                        'cheste-red-dark': '#990000',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Estilos Adicionales -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-red-50 min-h-screen font-sans text-gray-800 flex flex-col selection:bg-red-200 selection:text-red-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 md:py-5 flex flex-col items-center justify-center space-y-2">
+            <!-- Logo del centro -->
+            <img src="logo.png" alt="Logo CIPFP Cheste" class="h-8 md:h-10 object-contain w-auto">
+            
+            <h1 class="text-2xl md:text-3xl uppercase tracking-tighter font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cheste-red-dark to-cheste-red text-center">
+                Eco Auditoria CIPFP Cheste
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+        <div class="max-w-3xl w-full">
+            
+            <!-- Welcome View -->
+            <section id="welcome-view" class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden transition-all duration-500 ease-in-out transform">
+                <div class="p-8 md:p-12 text-center">
+                    <div class="inline-block p-4 rounded-full bg-red-50 text-cheste-red mb-6 shadow-sm">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                        Avaluació del Centre
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
+                        Vos donem la benvinguda a l'eina d'Eco Auditoria. Aquest procés ens permetrà analitzar les pràctiques sostenibles del nostre espai educatiu i identificar àrees de millora actuant en comunitat.
+                    </p>
+                    <button id="start-btn" class="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-cheste-red rounded-full hover:bg-cheste-red-dark hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-red-200">
+                        <span class="mr-3 text-lg">Començar Auditoria</span>
+                        <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+
+                    <div id="resume-container" class="hidden mt-6 fade-in cursor-pointer" tabindex="0">
+                        <p class="text-sm font-medium text-gray-500 mb-1">S'ha detectat una sessió pendent.</p>
+                        <button id="resume-btn" class="text-cheste-red font-semibold hover:text-cheste-red-dark transition-colors border-b border-cheste-red border-dashed pb-0.5 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-200">
+                            Vols reprendre la teua auditoria anterior?
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Audit View -->
+            <section id="audit-view" class="hidden opacity-0 bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500 ease-in-out transform scale-95">
+                <div class="bg-gray-50 border-b border-gray-100 p-6 flex justify-between items-center">
+                    <div>
+                        <p class="text-sm font-semibold text-cheste-red uppercase tracking-wide">Progrés</p>
+                        <h3 class="text-xl font-bold text-gray-800">Qüestionari d'Avaluació</h3>
+                    </div>
+                    <div class="text-right">
+                        <span id="progress-text" class="text-lg font-bold text-gray-700">1 / 5</span>
+                    </div>
+                </div>
+                
+                <!-- Progress Line -->
+                <div class="w-full bg-gray-200 h-1.5">
+                    <div id="progress-bar" class="bg-gradient-to-r from-cheste-red to-cheste-red-light h-1.5 transition-all duration-500 ease-out" style="width: 20%;"></div>
+                </div>
+
+                <div class="p-8 md:p-10">
+                    <div id="question-container" class="min-h-[200px] mb-8">
+                        <!-- Questions will be injected here -->
+                    </div>
+
+                    <div class="flex justify-between items-center pt-6 border-t border-gray-100">
+                        <button id="prev-btn" class="hidden px-5 py-2.5 text-sm font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                            Anterior
+                        </button>
+                        <button id="next-btn" class="ml-auto px-7 py-3 text-sm font-semibold text-white bg-cheste-red hover:bg-cheste-red-dark rounded-lg shadow-md transition-colors hover:shadow-lg focus:ring-2 focus:ring-red-200">
+                            Següent
+                        </button>
+                        <button id="finish-btn" class="hidden ml-auto px-7 py-3 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md transition-colors hover:shadow-lg focus:ring-2 focus:ring-green-200">
+                            Finalitzar Auditoria
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

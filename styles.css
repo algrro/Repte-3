@@ -1,0 +1,57 @@
+/* Animaciones personalizadas adicionales para un look premium */
+
+/* Efecto suave para revelar elementos */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ocultar elementos de forma suave */
+.fade-out {
+    animation: fadeOut 0.4s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* Estilización personalizada de los radio buttons */
+.custom-radio-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.custom-radio-container input:checked + div {
+    border-color: #cc0000;
+    background-color: #fef2f2; /* red-50 equivalent */
+    box-shadow: 0 4px 6px -1px rgba(204, 0, 0, 0.1), 0 2px 4px -1px rgba(204, 0, 0, 0.06);
+}
+
+.custom-radio-container input:checked + div svg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-radio-icon {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
