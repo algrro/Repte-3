@@ -1,7 +1,7 @@
 const questions = [
-    // GRUP A: PROVEÏDORS
+    // GRUP A: EMPRESES PROVEÏDORES
     {
-        id: 1, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A1. Dignitat Humana",
+        id: 1, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A1. Dignitat Humana",
         text: "1. Quin percentatge de les empreses proveïdores de roba de treball i EPI certifica que la seua fabricació està lliure d'explotació laboral (ex. segell Fair Wear)?",
         options: [
             { label: "Més del 80% (10 pts)", value: "10" },
@@ -11,7 +11,7 @@ const questions = [
         recommendation: "Seria interessant requerir com a criteri obligatori en les properes licitacions d'EPIs i roba l'acreditació de segells lliures d'explotació laboral (com Fair Wear)."
     },
     {
-        id: 2, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A1. Dignitat Humana",
+        id: 2, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A1. Dignitat Humana",
         text: "2. Existeix un protocol de recepció de material que verifique que el personal repartidor treballa en condicions de seguretat i dignitat?",
         options: [
             { label: "Sí, es supervisa i hi ha un canal de denúncia davant l'empresa proveïdora (10 pts)", value: "10" },
@@ -21,7 +21,7 @@ const questions = [
         recommendation: "Podria resultar molt beneficiós establir un procediment acollidor i segur en consergeria que vetle pel tracte digne cap al personal repartidor."
     },
     {
-        id: 3, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A2. Solidaritat i Justícia",
+        id: 3, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A2. Solidaritat i Justícia",
         text: "3. Quin percentatge dels contractes de subministraments menors s'adjudica a xicotetes empreses locals (Cheste i comarca) davant de grans superfícies?",
         options: [
             { label: "Més del 60% (10 pts)", value: "10" },
@@ -31,17 +31,17 @@ const questions = [
         recommendation: "Seria una gran empenta per al municipi intentar afavorir un poc més les xicotetes empreses i comerços de la comarca a l'hora de formalitzar contractes menors."
     },
     {
-        id: 4, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A2. Solidaritat i Justícia",
+        id: 4, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A2. Solidaritat i Justícia",
         text: "4. Quin és el termini mitjà de pagament a les empreses proveïdores des que la factura és conformada pel centre?",
         options: [
             { label: "Menys de 15 dies (10 pts)", value: "10" },
             { label: "Entre 15 i 30 dies (5 pts)", value: "5" },
             { label: "Més de 30 dies (0 pts)", value: "0" }
         ],
-        recommendation: "Resultaria de molta ajuda optimitzar els passos administratius interns per intentar conformar les factures el més ràpid possible i reduir l'espera dels proveïdors."
+        recommendation: "Resultaria de molta ajuda optimitzar els passos administratius interns per intentar conformar les factures el més ràpid possible i reduir l'espera de les empreses proveïdores."
     },
     {
-        id: 5, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A3. Sostenibilitat Mediambiental",
+        id: 5, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A3. Sostenibilitat Mediambiental",
         text: "5. Quin percentatge dels subministraments de papereria i consumibles compta amb certificació ecològica (FSC, PEFC o Ecolabel)?",
         options: [
             { label: "Més del 90% (10 pts)", value: "10" },
@@ -51,7 +51,7 @@ const questions = [
         recommendation: "Us animem a sol·licitar que tota la nova papereria i el material fungible compte preferiblement amb alguna etiqueta mediambiental com l'Ecolabel o FSC."
     },
     {
-        id: 6, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A3. Sostenibilitat Mediambiental",
+        id: 6, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A3. Sostenibilitat Mediambiental",
         text: "6. Es prioritza en les licitacions de maquinària per a tallers la compra d'equips amb la classificació energètica més alta disponible?",
         options: [
             { label: "És un criteri amb un pes superior al 20% en la valoració (10 pts)", value: "10" },
@@ -61,7 +61,7 @@ const questions = [
         recommendation: "Seria un gran pas avant afegir puntuacions altes (per damunt del 20%) a aquelles ofertes que presenten equips amb major eficiència energètica per als tallers."
     },
     {
-        id: 7, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A4. Transparència i Participació Democràtica",
+        id: 7, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A4. Transparència i Participació Democràtica",
         text: "7. Participen els departaments didàctics en la redacció tècnica dels plecs per a assegurar la qualitat i l'ètica del material?",
         options: [
             { label: "Sempre, mitjançant un procés formal i documentat (10 pts)", value: "10" },
@@ -71,7 +71,7 @@ const questions = [
         recommendation: "Sempre és positiu buscar fórmules per involucrar activament els departaments didàctics en la redacció d'aquests plecs i formalitzar la seua opinió qualificada."
     },
     {
-        id: 8, group: "GRUP A: PROVEÏDORS (Cadena de subministrament)", subgroup: "A4. Transparència i Participació Democràtica",
+        id: 8, group: "GRUP A: EMPRESES PROVEÏDORES (Cadena de subministrament)", subgroup: "A4. Transparència i Participació Democràtica",
         text: "8. És públic i accessible per a tot el personal del centre el llistat d'empreses proveïdores i l'import anual facturat per cadascuna?",
         options: [
             { label: "Sí, en una plataforma interna o tauler d'anuncis (10 pts)", value: "10" },
@@ -81,9 +81,9 @@ const questions = [
         recommendation: "Es podria valorar divulgar el llistat principal d'empreses proveïdores i la seua inversió a la intranet del centre de manera anual per millorar la transparència."
     },
 
-    // GRUP B: PROPIETARIS I RECURSOS FINANCERS
+    // GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS
     {
-        id: 9, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B1. Dignitat Humana",
+        id: 9, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B1. Dignitat Humana",
         text: "9. En quina mesura s'evita treballar amb entitats financeres que inverteixen en sectors no ètics (armament, combustibles fòssils)?",
         options: [
             { label: "El 100% dels fons estan en banca ètica o amb alts estàndards de RSC (10 pts)", value: "10" },
@@ -93,7 +93,7 @@ const questions = [
         recommendation: "Valdria la pena esbrinar o sol·licitar un canvi progressiu d'alguns comptes de gestió del centre cap a iniciatives representatives de la Banca Ètica."
     },
     {
-        id: 10, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B1. Dignitat Humana",
+        id: 10, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B1. Dignitat Humana",
         text: "10. Com es garanteix l'equitat en el repartiment de les dietes i ajudes de projectes europeus (Erasmus+)?",
         options: [
             { label: "Existeix un barem públic basat en necessitats i mèrits, revisat pel Consell Escolar (10 pts)", value: "10" },
@@ -103,7 +103,7 @@ const questions = [
         recommendation: "Resultaria molt adient sotmetre els criteris de repartiment i barems d'accés als fons Erasmus a l'aprovació clara del Consell Escolar."
     },
     {
-        id: 11, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B2. Solidaritat i Justícia",
+        id: 11, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B2. Solidaritat i Justícia",
         text: "11. Quin percentatge del pressupost de lliure gestió es reinverteix en fons d'emergència o beques pròpies per a l'alumnat amb dificultats?",
         options: [
             { label: "Existeix una partida específica superior al 3% (10 pts)", value: "10" },
@@ -113,7 +113,7 @@ const questions = [
         recommendation: "Seria una idea solidària meravellosa poder reservar una petita bossa dins del pressupost exclusivament dedicada a donar suport o beques d'emergència."
     },
     {
-        id: 12, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B2. Solidaritat i Justícia",
+        id: 12, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B2. Solidaritat i Justícia",
         text: "12. Com es distribueixen els recursos entre les diferents famílies professionals segons les seues necessitats d'equipament?",
         options: [
             { label: "Per un pla d'inversió plurianual consensuat que prioritza les carències tècniques (10 pts)", value: "10" },
@@ -123,7 +123,7 @@ const questions = [
         recommendation: "Més que un repartiment idèntic o aleatori, seria fantàstic establir una trajectòria compartida per equipar progressivament a aquells departaments amb més faltes."
     },
     {
-        id: 13, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B3. Sostenibilitat Mediambiental",
+        id: 13, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B3. Sostenibilitat Mediambiental",
         text: "13. Es compta amb un pla d'inversió per a la millora de l'aïllament tèrmic o la instal·lació d'energies renovables al centre?",
         options: [
             { label: "Sí, amb fons assignats i terminis d'execució (10 pts)", value: "10" },
@@ -133,7 +133,7 @@ const questions = [
         recommendation: "Animem a dissenyar algunes accions a curt termini o destinar xicotets romanents cap a millores pràctiques d'aïllament o energia renovable al propi edifici."
     },
     {
-        id: 14, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B3. Sostenibilitat Mediambiental",
+        id: 14, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B3. Sostenibilitat Mediambiental",
         text: "14. Quina part del pressupost de manteniment es destina a la reparació d'equips en lloc de la substitució directa per equips nous?",
         options: [
             { label: "Més del 30%, prioritzant la reparabilitat (10 pts)", value: "10" },
@@ -143,7 +143,7 @@ const questions = [
         recommendation: "Fomentar un canvi cultural als tallers apostant fermament per invertir temps i diners a reparar en lloc de substituir immediatament per maquinària nova."
     },
     {
-        id: 15, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B4. Transparencia i Participació Democràtica",
+        id: 15, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B4. Transparencia i Participació Democràtica",
         text: "15. Quantes sessions informatives obertes a tota la comunitat educativa es realitzen sobre l'execució del Projecte de Gestió?",
         options: [
             { label: "Almenys dues sessions (inici i final de curs) (10 pts)", value: "10" },
@@ -153,7 +153,7 @@ const questions = [
         recommendation: "Obrir aquestes presentacions comptables a tot el Claustre en una trobada distesa de principi o final de curs resulta sempre un pas decisiu en termes de confiança."
     },
     {
-        id: 16, group: "GRUP B: PROPIETARIS I RECURSOS FINANCERS", subgroup: "B4. Transparencia i Participació Democràtica",
+        id: 16, group: "GRUP B: ENTITATS PROPIETÀRIES I RECURSOS FINANCERS", subgroup: "B4. Transparencia i Participació Democràtica",
         text: "16. Existeix un mecanisme perquè el personal puga proposar inversions en la millora de la convivència o infraestructures del centre?",
         options: [
             { label: "Sí, i s'han executat propostes de la plantilla aquest curs (10 pts)", value: "10" },
